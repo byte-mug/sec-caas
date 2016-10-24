@@ -22,11 +22,7 @@
 #pragma once
 #include <secfwstd/stdint.h>
 #include <secmac/decision.h>
-
-typedef struct {
-	const void* ptr;
-	uint32_t    size;
-} secmac_data_t;
+#include <secmac/data.h>
 
 enum{
 	SECMAC_OP_READ      = 0x0001,

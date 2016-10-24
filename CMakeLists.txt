@@ -27,6 +27,7 @@ include_directories( ./include )
 file(GLOB HELLO_SRC
 	# App.
 	src/apps/helloworld/*.c
+	src/testfw/*.c
 )
 
 file(GLOB SECMAC_SRC

@@ -1,6 +1,7 @@
 #include <secmac/decision.h>
 #include <secmac/resource.h>
 #include <secmac/fw_res.h>
+#include <testfw/test_res.h>
 #include <stdio.h>
 
 
@@ -29,12 +30,21 @@ static const secmac_res_hook_t hook = {
 
 void print_secmac_res_fw_t(const secmac_res_fw_t* fw);
 
+secmac_data_entry_t entries[] = {
+};
+
 int main(){
-	secmac_data_t pad = {0,0};
+	secmac_data_t *subbuf, *resbuf;
 	secmac_res_fw_t* sec = secmac_res_new();
 	secmac_res_add_hook(sec,&hook);
 	print_secmac_res_fw_t(sec);
-	secmac_d result = secmac_res_check_op(sec,&pad,&pad,0);
+	
+	subbuf = testfw_getdata(entries,0,sec->subject_attrs_list,sec->subject_attrs_len);
+	resbuf = testfw_getdata(entries,0,sec->resource_attrs_list,sec->resource_attrs_len);
+	
+	secmac_d result = secmac_res_check_op(sec,subbuf,resbuf,0);
 	printf("%s\n",secmac_allowed(result)?"Yes":"No");
 	return 0;
 }
+
+
