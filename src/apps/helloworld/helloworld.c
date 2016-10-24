@@ -3,7 +3,7 @@
 #include <secmac/fw_res.h>
 #include <testfw/test_res.h>
 #include <stdio.h>
-
+#include <secacl/aclfmt.h>
 
 static const char* const subatt[] = {
 	SECMAC_POSIX_CRED,

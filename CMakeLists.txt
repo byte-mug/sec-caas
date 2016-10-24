@@ -35,5 +35,11 @@ file(GLOB SECMAC_SRC
 	src/secmac/*.c
 )
 
-add_executable(helloworld ${HELLO_SRC} ${SECMAC_SRC})
+
+file(GLOB SECACL_SRC
+	# SECMAC base framework.
+	src/secacl/*.c
+)
+
+add_executable(helloworld ${HELLO_SRC} ${SECMAC_SRC} ${SECACL_SRC})
 
