@@ -63,5 +63,7 @@ typedef enum secmac_decision {
 static inline secmac_d secmac_reduce(secmac_d a,secmac_d b){
 	return a>b?a:b;
 }
-
+static inline int secmac_allowed(secmac_d a){
+	return a == secmac_ALLOW;
+}
 
