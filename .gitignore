@@ -31,3 +31,8 @@
 # Debug files
 *.dSYM/
 *.su
+
+# CMake
+build/*
+!build/.empty
+
