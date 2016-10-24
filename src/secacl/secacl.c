@@ -110,15 +110,15 @@ static secmac_d secmac_dac_hook (
 		}
 		if(found) mask |= entry.mask;
 	}
-	if( (secmac_op & SMOP_WRITE) && ( mask & SECACL_MASK_NO_WRITE ) ) return secmac_DENY;
+	if( (secmac_op & SMOP_WRITE ) && ( mask & SECACL_MASK_NO_WRITE ) ) return secmac_DENY;
 	if( (secmac_op & SMOP_APPEND) && ( mask & ACL_NO_APPEND ) ) return secmac_DENY;
-	if( (secmac_op & SMOP_READ) && ( mask & SECACL_MASK_NO_READ ) ) return secmac_DENY;
-	if( (secmac_op & SMOP_EXEC) && ( mask & SECACL_MASK_NO_EXECUTE ) ) return secmac_DENY;
+	if( (secmac_op & SMOP_READ  ) && ( mask & SECACL_MASK_NO_READ ) ) return secmac_DENY;
+	if( (secmac_op & SMOP_EXEC  ) && ( mask & SECACL_MASK_NO_EXECUTE ) ) return secmac_DENY;
 	
-	if( (secmac_op & SMOP_WRITE) && !( mask & SECACL_MASK_WRITE ) ) return secmac_NONE;
+	if( (secmac_op & SMOP_WRITE ) && !( mask & SECACL_MASK_WRITE ) ) return secmac_NONE;
 	if( (secmac_op & SMOP_APPEND) && !( mask & ACL_APPEND ) ) return secmac_NONE;
-	if( (secmac_op & SMOP_READ) && !( mask & SECACL_MASK_READ ) ) return secmac_NONE;
-	if( (secmac_op & SMOP_EXEC) && !( mask & SECACL_MASK_EXECUTE ) ) return secmac_NONE;
+	if( (secmac_op & SMOP_READ  ) && !( mask & SECACL_MASK_READ ) ) return secmac_NONE;
+	if( (secmac_op & SMOP_EXEC  ) && !( mask & SECACL_MASK_EXECUTE ) ) return secmac_NONE;
 	
 	if( (secmac_op & SMOP_ADMIN ) && !( mask & SECACL_MASK_ADMINISTER ) ) return secmac_NONE;
 	if( (secmac_op & SMOP_LINK  ) && !( mask & ACL_LINK ) ) return secmac_NONE;
