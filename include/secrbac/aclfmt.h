@@ -34,16 +34,6 @@ static inline secrbac_entry_t secrbac_decode(uint64_t entry){
 	return (secrbac_entry_t){ (uint32_t)(entry>>32), (uint32_t)(entry&0xffffffffu)  };
 }
 
-#define SECRBAC_TYPE_USER       0x0001
-#define SECRBAC_TYPE_GROUP      0x0002
-#define SECRBAC_TYPE_OTHER      0x0004  /* Other = All. */
-
-/* Like the above but */
-#define SECRBAC_TYPE_INV_USER   0x0010
-#define SECRBAC_TYPE_INV_GROUP  0x0020
-#define SECRBAC_TYPE_INV_OTHER  0x0040
-
-
 #define SECRBAC_MASK_APPEND     0x0008
 #define SECRBAC_MASK_READ       0x0004
 #define SECRBAC_MASK_WRITE      0x0002
