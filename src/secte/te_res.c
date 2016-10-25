@@ -43,7 +43,6 @@ enum {
 
 enum {
 	SMOP_UNSUP = ~ (SMOP_APPEND|SMOP_WRITE|SMOP_READ|SMOP_EXEC|SMOP_ADMIN),
-	SMOP_NO_RWX = ~ (SMOP_APPEND|SMOP_WRITE|SMOP_READ|SMOP_EXEC),
 };
 
 enum {
@@ -105,7 +104,7 @@ static secmac_d secte_te_hook (
 	if( (secmac_op & SMOP_LINK  ) && !( mask & SECTE_MASK_GRANT_LINK       ) ) allow = secmac_NONE;
 	if( (secmac_op & SMOP_DELETE) && !( mask & SECTE_MASK_GRANT_DELETE     ) ) allow = secmac_NONE;
 	if( (secmac_op & SMOP_RENAME) && !( mask & SECTE_MASK_GRANT_RENAME     ) ) allow = secmac_NONE;
-	if(  secmac_op & SMOP_NO_RWX  ) allow = secmac_NONE;
+	if(  secmac_op & SMOP_UNSUP  ) allow = secmac_NONE;
 	
 	/*
 	 * Check basic permissions.
