@@ -124,6 +124,7 @@ static secmac_d secmac_dac_hook (
 	if( (secmac_op & SMOP_LINK  ) && !( mask & ACL_LINK ) ) return secmac_NONE;
 	if( (secmac_op & SMOP_DELETE) && !( mask & ACL_DELETE ) ) return secmac_NONE;
 	if( (secmac_op & SMOP_RENAME) && !( mask & ACL_RENAME ) ) return secmac_NONE;
+	if( secmac_op & SMOP_UNSUP ) return secmac_NONE;
 	
 	return secmac_ALLOW;
 }
