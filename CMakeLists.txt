@@ -56,5 +56,10 @@ file(GLOB SECTE_SRC
 	src/secte/*.c
 )
 
-add_executable(helloworld ${HELLO_SRC} ${SECMAC_SRC} ${SECACL_SRC} ${SECMLS_SRC} ${SECRBAC_SRC} ${SECTE_SRC})
+file(GLOB SECRBIG_SRC
+	# SECMAC base framework.
+	src/secrbig/*.c
+)
+
+add_executable(helloworld ${HELLO_SRC} ${SECMAC_SRC} ${SECACL_SRC} ${SECMLS_SRC} ${SECRBAC_SRC} ${SECTE_SRC} ${SECRBIG_SRC})
 
