@@ -32,8 +32,8 @@ enum{
 	SECMAC_OP_DELETE    = 0x0010, /* e.g. unlink() */
 	SECMAP_OP_RENAME    = 0x0020, /* e.g. rename() */
 	SECMAP_OP_LINK      = 0x0040, /* e.g. creating an hardlink. */
-	SECMAP_OP_SEND      = 0x0080, /* Send (socket-like resources) */
-	SECMAP_OP_RECEIVE   = 0x0100, /* Receive (socket-like resources) */
+	SECMAP_OP_CONNECT   = 0x0080, /* Connect-to (socket-like resources) */
+	SECMAP_OP_ACCEPT    = 0x0100, /* Accept-from (socket-like resources) */
 	SECMAP_OP_CH_MODE   = 0x0200, /* Change Mode in POSIX_STAT. */
 	SECMAP_OP_CH_OWNER  = 0x0400, /* Change Owner in POSIX_STAT.*/
 	SECMAP_OP_CH_ATTRIB = 0x0800, /* Change SECMAC Attributes. */
