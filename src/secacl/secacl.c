@@ -92,7 +92,7 @@ static secmac_d secmac_dac_hook (
 		case SECACL_TYPE_INV_GROUP:
 			if( cred->gid == entry.xid ) found = 1;
 			else for(j=0;j<ngroups;++j){
-				if( groups[i] != entry.xid ) continue;
+				if( groups[j] != entry.xid ) continue;
 				found = 1;
 				break;
 			}

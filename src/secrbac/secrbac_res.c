@@ -73,7 +73,7 @@ static secmac_d secrbac_rbac_hook (
 	for(i=0;i<acls;++i){
 		entry = secrbac_decode(acl[i]);
 		for(j=0;j<nroles;++j){
-			if( roles[i] != entry.rid ) continue;
+			if( roles[j] != entry.rid ) continue;
 			mask |= entry.mask;
 			break;
 		}

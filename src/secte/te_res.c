@@ -86,7 +86,7 @@ static secmac_d secte_te_hook (
 	for(i=0;i<acls;++i){
 		entry = secte_decode(acl[i]);
 		for(j=0;j<ntypes;++j){
-			if( types[i] != entry.tid ) continue;
+			if( types[j] != entry.tid ) continue;
 			mask |= entry.mask;
 			break;
 		}
